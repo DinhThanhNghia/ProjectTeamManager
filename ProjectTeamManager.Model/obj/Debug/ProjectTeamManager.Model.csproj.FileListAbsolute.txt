@@ -1,0 +1,12 @@
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\bin\Debug\ProjectTeamManager.Model.dll.config
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\bin\Debug\ProjectTeamManager.Model.dll
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\bin\Debug\ProjectTeamManager.Model.pdb
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\bin\Debug\EntityFramework.dll
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\bin\Debug\EntityFramework.xml
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\obj\Debug\ProjectTeamManager.Model.csprojAssemblyReference.cache
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\obj\Debug\ProjectTeamManager.Model.csproj.CoreCompileInputs.cache
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\obj\Debug\ProjectTeamManager.Model.csproj.CopyComplete
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\obj\Debug\ProjectTeamManager.Model.dll
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Model\obj\Debug\ProjectTeamManager.Model.pdb

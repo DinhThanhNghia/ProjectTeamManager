@@ -1,0 +1,6 @@
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Common\bin\Debug\ProjectTeamManager.Common.dll
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Common\bin\Debug\ProjectTeamManager.Common.pdb
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Common\obj\Debug\ProjectTeamManager.Common.csprojAssemblyReference.cache
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Common\obj\Debug\ProjectTeamManager.Common.csproj.CoreCompileInputs.cache
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Common\obj\Debug\ProjectTeamManager.Common.dll
+D:\ASPNET\ProjectTeamManager\ProjectTeamManager.Common\obj\Debug\ProjectTeamManager.Common.pdb

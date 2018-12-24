@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6f3bdf65bfa94b1c9cbd2f9240c080b1" Name="Diagram1">
+        <EntityTypeShape EntityType="DBGroup1Model.Employee" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGroup1Model.ManagerComment" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGroup1Model.Project" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGroup1Model.ProjectTask" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGroup1Model.TaskStatu" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBGroup1Model.UserStory" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <AssociationConnector Association="DBGroup1Model.FK__ProjectTa__Emplo__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGroup1Model.FK__ManagerCo__Proje__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGroup1Model.FK__UserStory__Proje__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGroup1Model.FK__ProjectTa__TaskS__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="DBGroup1Model.FK__ProjectTa__UserS__440B1D61" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

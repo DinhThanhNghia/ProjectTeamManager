@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBGroup1Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ContactNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Skills" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ProjectTasks" Relationship="Self.FK__ProjectTa__Emplo__4222D4EF" FromRole="Employee" ToRole="ProjectTask" />
+  </EntityType>
+  <EntityType Name="ManagerComment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectTaskId" Type="Guid" Nullable="false" />
+    <Property Name="Comments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ProjectTask" Relationship="Self.FK__ManagerCo__Proje__412EB0B6" FromRole="ManagerComment" ToRole="ProjectTask" />
+  </EntityType>
+  <EntityType Name="Project">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ClientName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="UserStories" Relationship="Self.FK__UserStory__Proje__44FF419A" FromRole="Project" ToRole="UserStory" />
+  </EntityType>
+  <EntityType Name="ProjectTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="EmployeeId" Type="Guid" Nullable="false" />
+    <Property Name="TaskStartDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TaskEndDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TaskStatusId" Type="Guid" Nullable="false" />
+    <Property Name="UserStoryId" Type="Guid" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK__ProjectTa__Emplo__4222D4EF" FromRole="ProjectTask" ToRole="Employee" />
+    <NavigationProperty Name="ManagerComments" Relationship="Self.FK__ManagerCo__Proje__412EB0B6" FromRole="ProjectTask" ToRole="ManagerComment" />
+    <NavigationProperty Name="TaskStatu" Relationship="Self.FK__ProjectTa__TaskS__4316F928" FromRole="ProjectTask" ToRole="TaskStatus" />
+    <NavigationProperty Name="UserStory" Relationship="Self.FK__ProjectTa__UserS__440B1D61" FromRole="ProjectTask" ToRole="UserStory" />
+  </EntityType>
+  <EntityType Name="TaskStatu">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ProjectTasks" Relationship="Self.FK__ProjectTa__TaskS__4316F928" FromRole="TaskStatus" ToRole="ProjectTask" />
+  </EntityType>
+  <EntityType Name="UserStory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="Story" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProjectId" Type="Guid" Nullable="false" />
+    <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+    <Property Name="InsAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InsBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UpdAt" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UpdBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Project" Relationship="Self.FK__UserStory__Proje__44FF419A" FromRole="UserStory" ToRole="Project" />
+    <NavigationProperty Name="ProjectTasks" Relationship="Self.FK__ProjectTa__UserS__440B1D61" FromRole="UserStory" ToRole="ProjectTask" />
+  </EntityType>
+  <Association Name="FK__ProjectTa__Emplo__4222D4EF">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="ProjectTask" Type="Self.ProjectTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTask">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ManagerCo__Proje__412EB0B6">
+    <End Role="ProjectTask" Type="Self.ProjectTask" Multiplicity="1" />
+    <End Role="ManagerComment" Type="Self.ManagerComment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProjectTask">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ManagerComment">
+        <PropertyRef Name="ProjectTaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserStory__Proje__44FF419A">
+    <End Role="Project" Type="Self.Project" Multiplicity="1" />
+    <End Role="UserStory" Type="Self.UserStory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Project">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserStory">
+        <PropertyRef Name="ProjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProjectTa__TaskS__4316F928">
+    <End Role="TaskStatus" Type="Self.TaskStatu" Multiplicity="1" />
+    <End Role="ProjectTask" Type="Self.ProjectTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaskStatus">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTask">
+        <PropertyRef Name="TaskStatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ProjectTa__UserS__440B1D61">
+    <End Role="UserStory" Type="Self.UserStory" Multiplicity="1" />
+    <End Role="ProjectTask" Type="Self.ProjectTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserStory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProjectTask">
+        <PropertyRef Name="UserStoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DBGroup1Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="ManagerComments" EntityType="Self.ManagerComment" />
+    <EntitySet Name="Projects" EntityType="Self.Project" />
+    <EntitySet Name="ProjectTasks" EntityType="Self.ProjectTask" />
+    <EntitySet Name="TaskStatus" EntityType="Self.TaskStatu" />
+    <EntitySet Name="UserStories" EntityType="Self.UserStory" />
+    <AssociationSet Name="FK__ProjectTa__Emplo__4222D4EF" Association="Self.FK__ProjectTa__Emplo__4222D4EF">
+      <End Role="Employee" EntitySet="Employees" />
+      <End Role="ProjectTask" EntitySet="ProjectTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ManagerCo__Proje__412EB0B6" Association="Self.FK__ManagerCo__Proje__412EB0B6">
+      <End Role="ProjectTask" EntitySet="ProjectTasks" />
+      <End Role="ManagerComment" EntitySet="ManagerComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserStory__Proje__44FF419A" Association="Self.FK__UserStory__Proje__44FF419A">
+      <End Role="Project" EntitySet="Projects" />
+      <End Role="UserStory" EntitySet="UserStories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProjectTa__TaskS__4316F928" Association="Self.FK__ProjectTa__TaskS__4316F928">
+      <End Role="TaskStatus" EntitySet="TaskStatus" />
+      <End Role="ProjectTask" EntitySet="ProjectTasks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ProjectTa__UserS__440B1D61" Association="Self.FK__ProjectTa__UserS__440B1D61">
+      <End Role="UserStory" EntitySet="UserStories" />
+      <End Role="ProjectTask" EntitySet="ProjectTasks" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
